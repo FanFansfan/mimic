@@ -11,7 +11,7 @@ commit := 5b99a41ea50e2a05ec9a330ab2361f8d8a1f9721
 PKG_BUILD_DIR := $(BUILD_DIR)/mimic-$(commit)
 PKG_SOURCE := $(commit).tar.gz
 PKG_SOURCE_URL := https://github.com/FanFansfan/mimic
-#PKG_HASH := 4c2cd33045464572186d77b52c0de3b43484c82c18e9487b1026982f0aebf808
+PKG_HASH := 667010401cb4e7a887be79a1f5109ccb16847920cd32be22eafbb81e2e90b67e
 
 PKG_BUILD_DEPENDS := argp-standalone bpf-headers bpftool/host
 
