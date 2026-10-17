@@ -7,11 +7,11 @@ PKG_NAME := mimic
 PKG_VERSION := 0.7.0.20250831
 PKG_RELEASE := 4
 
-commit := ad7a4b95867f48ada5a39881c2096251a222b9b8
+commit := 5b99a41ea50e2a05ec9a330ab2361f8d8a1f9721
 PKG_BUILD_DIR := $(BUILD_DIR)/mimic-$(commit)
 PKG_SOURCE := $(commit).tar.gz
-PKG_SOURCE_URL := https://github.com/hack3ric/mimic/archive/
-PKG_HASH := 4c2cd33045464572186d77b52c0de3b43484c82c18e9487b1026982f0aebf808
+PKG_SOURCE_URL := https://github.com/FanFansfan/mimic
+#PKG_HASH := 4c2cd33045464572186d77b52c0de3b43484c82c18e9487b1026982f0aebf808
 
 PKG_BUILD_DEPENDS := argp-standalone bpf-headers bpftool/host
 
@@ -41,7 +41,7 @@ mimic_kmod_flags := \
 	CROSS_COMPILE="$(TARGET_CROSS)" \
 	M="$(PKG_BUILD_DIR)/kmod" \
 	V="$(V)" \
-	CHECKSUM_HACK=kprobe \
+	CHECKSUM_HACK=kfunc \
 	COMPAT_LINUX_6_6=1
 
 mimic_cli_flags := \
@@ -51,7 +51,7 @@ mimic_cli_flags := \
 	BPF_TARGET="$(BPF_TARGET)" \
 	LLVM_STRIP="$(LLVM_STRIP)" \
 	ARGP_STANDALONE=1 \
-	CHECKSUM_HACK=kprobe \
+	CHECKSUM_HACK=kfunc \
 	COMPAT_LINUX_6_6=1 \
 	RUNTIME_DIR=/var/run/mimic \
 	STRIP_BTF_EXT=1 \
